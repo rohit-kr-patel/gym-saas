@@ -1,0 +1,28 @@
+---
+description: Phase 5 — Plans CRUD, subscriptions, expiry in gym timezone, renewals
+globs:
+alwaysApply: false
+---
+
+# Phase 05 — Plans & subscriptions
+
+## Goal
+
+Plan CRUD and member subscriptions with calendar-month expiry in the gym timezone, renewals, and edge-case unit tests.
+
+## Tasks
+
+- Plan CRUD: monthly, quarterly, half-yearly, annual; price in paise (`bigint`).
+- Assign plan to member; expiry via calendar-month arithmetic in the gym timezone (default `Asia/Kolkata`).
+- Renewal flow; expiring / expired indicators; subscription history.
+- Unit tests for month-end, leap-year, and early/late renewal.
+
+## Done when
+
+- [ ] Plan CRUD works with paise prices
+- [ ] Assign, expiry, and renewal behave correctly in gym timezone
+- [ ] Expiring / expired indicators and history work
+- [ ] Unit tests cover month-end, leap-year, early/late renewal
+- [ ] Lint, typecheck, and tests pass
+
+Update BUILD_STATUS.md, then stop and wait for me.

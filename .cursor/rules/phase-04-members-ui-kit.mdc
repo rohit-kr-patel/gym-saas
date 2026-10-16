@@ -1,0 +1,30 @@
+---
+description: Phase 4 — Shared UI kit and members add/edit/view/search/filter
+globs:
+alwaysApply: false
+---
+
+# Phase 04 — Members & UI kit
+
+## Goal
+
+Ship a shared UI kit and full member list/detail flows with validation and tests.
+
+## Tasks
+
+- Shared UI kit: theme, Button, Input, Card, StatusBadge, EmptyState, ErrorState, Loading, ConfirmDialog.
+- Add / edit / view members.
+- Search and filter; active / inactive status.
+- Zod validation on member forms.
+- Component and screen tests.
+
+## Done when
+
+- [ ] UI kit components exist and use shared theme tokens
+- [ ] Members can be added, edited, and viewed
+- [ ] Search, filter, and active/inactive work
+- [ ] Zod validation covers forms
+- [ ] Loading / empty / error / success states present
+- [ ] Lint, typecheck, and tests pass
+
+Update BUILD_STATUS.md, then stop and wait for me.

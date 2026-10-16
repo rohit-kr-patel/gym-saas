@@ -1,0 +1,37 @@
+---
+description: Core project rules for the multi-tenant Gym Management SaaS
+globs:
+alwaysApply: true
+---
+
+# Project core
+
+Multi-tenant Gym Management SaaS, Android-first, v1 for one gym owner.
+
+**Stack:** React Native + Expo (Expo Router), TypeScript strict, Supabase (Auth, Postgres, RLS, migrations).
+
+## Before and after every task
+
+- If `BUILD_STATUS.md` and `SETUP.md` exist, read them first; if not, create them.
+- Update both at the end of every task.
+
+## Domain invariants
+
+- Money = integer paise (`bigint`). Never floats.
+- Business date = computed from the gym's timezone (default `Asia/Kolkata`), never the device clock.
+- Every gym-owned table has `gym_id`, RLS enabled, policies derived from the user's verified gym role.
+- Never trust a client-supplied `gym_id`. Never disable RLS.
+- No service-role key in the app. No secrets in Git. Use `.env` and `.env.example`.
+- Payments are append-only. Corrections are reversal rows, never deletes.
+
+## Delivery
+
+- Run lint, typecheck and tests before declaring anything done. Never claim success you have not verified.
+- Work in small steps. Keep the app runnable after every step.
+
+## Out of scope (v1)
+
+- Payment gateways
+- SMS / WhatsApp
+- Member / trainer apps
+- PDF export

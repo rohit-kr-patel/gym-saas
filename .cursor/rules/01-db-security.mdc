@@ -1,0 +1,28 @@
+---
+description: Rules for migrations, RLS and database tests
+globs: supabase/**
+alwaysApply: false
+---
+
+# Database & security
+
+## Schema standards
+
+- UUID primary keys on all tables.
+- Foreign keys for every relationship; indexes on FKs and common filters.
+- Unique constraints where business identity requires them.
+- `created_at` / `updated_at` with triggers to maintain them.
+- Same-gym invariants via composite FKs or triggers (related rows must share `gym_id`).
+- Amounts are integer paise (`bigint`) and must be `>= 0`.
+- Payments are append-only; corrections are reversal rows, never updates/deletes of payment amounts.
+
+## RLS & provisioning
+
+- RLS enabled on every table; policies go through a security-definer role helper (never trust client `gym_id`).
+- No client inserts into `gyms` or `user_gym_roles`.
+- Provisioning only via a service-role-only function (e.g. `provision_gym`).
+- Never disable RLS. No service-role key in the app.
+
+## Tests
+
+- pgTAP cross-tenant tests covering read, insert, update, and delete isolation between gyms.

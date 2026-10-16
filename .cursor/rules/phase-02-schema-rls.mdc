@@ -1,0 +1,31 @@
+---
+description: Phase 2 — Schema migrations, RLS, provision_gym, seed, pgTAP tests
+globs:
+alwaysApply: false
+---
+
+# Phase 02 — Schema & RLS
+
+## Goal
+
+Ship the v1 Postgres schema with invariants, RLS, gym provisioning, demo seed data, and cross-tenant pgTAP coverage.
+
+## Tasks
+
+- Migrations for: `gyms`, `user_profiles`, `user_gym_roles`, `members`, `membership_plans`, `member_subscriptions`, `payments`, `attendance_records`, `audit_logs`.
+- Same-gym invariants, amount constraints, append-only payments.
+- RLS on every table via security-definer role helper.
+- `provision_gym` function (service-role-only) plus one-time script.
+- Dev seed with two demo gyms.
+- pgTAP tests for cross-tenant read/insert/update/delete.
+
+## Done when
+
+- [ ] All listed tables migrated with invariants
+- [ ] RLS policies in place; no client inserts into `gyms` / `user_gym_roles`
+- [ ] `provision_gym` + one-time script work
+- [ ] Two-gym seed loads
+- [ ] pgTAP cross-tenant tests pass
+- [ ] **STOP and show me the policies and test output** before continuing
+
+Update BUILD_STATUS.md, then stop and wait for me.

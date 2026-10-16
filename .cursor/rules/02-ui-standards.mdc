@@ -1,0 +1,24 @@
+---
+description: UI and UX standards for app screens and shared components
+globs: app/**,components/**
+alwaysApply: false
+---
+
+# UI & UX standards
+
+## Visual & navigation
+
+- Dark navy surfaces with one accent color.
+- Large touch targets suitable for Android gym-floor use.
+- Bottom tabs: Dashboard, Members, Attendance, Payments, Settings.
+- Shared theme tokens (colors, spacing, typography); no one-off magic values.
+
+## States & safety
+
+- Every screen handles loading, empty, error, and success states.
+- Confirmation before destructive or financial actions.
+- Accessible labels and sufficient contrast.
+
+## Forms
+
+- Zod validation on all forms before submit.

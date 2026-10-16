@@ -1,0 +1,28 @@
+---
+description: Phase 8 — Gym settings, owner profile, plan settings, hardening pass
+globs:
+alwaysApply: false
+---
+
+# Phase 08 — Settings & hardening
+
+## Goal
+
+Complete gym/owner/plan settings and run a hardening pass on security, UX states, and accessibility.
+
+## Tasks
+
+- Gym settings: name, contact, address, INR, timezone, receipt details.
+- Owner profile; plan settings.
+- Hardening: rerun RLS tests; check logs for leaked secrets or personal data; verify all loading/empty/error states; touch targets and contrast.
+
+## Done when
+
+- [ ] Gym, owner, and plan settings editable and persisted
+- [ ] RLS tests re-run and pass
+- [ ] No secrets or personal data leaked in logs
+- [ ] Loading / empty / error states present across flows
+- [ ] Touch targets and contrast meet UI standards
+- [ ] Lint, typecheck, and tests pass
+
+Update BUILD_STATUS.md, then stop and wait for me.

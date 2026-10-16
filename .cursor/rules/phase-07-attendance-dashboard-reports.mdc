@@ -1,0 +1,28 @@
+---
+description: Phase 7 — Attendance check-in, live dashboard, filtered reports
+globs:
+alwaysApply: false
+---
+
+# Phase 07 — Attendance, dashboard & reports
+
+## Goal
+
+Gym-timezone attendance check-in, a dashboard fed by real queries, and date-filtered reports that match underlying payment rows.
+
+## Tasks
+
+- Check-in RPC using gym business date with duplicate prevention; today's list; member history.
+- Dashboard from real queries: total members, active, expired, expiring soon, today's attendance, today's collections net of reversals, pending dues, recent payments.
+- Reports with date filters.
+- Test that report totals equal underlying payment rows.
+
+## Done when
+
+- [ ] Check-in uses gym business date; duplicates blocked
+- [ ] Today's list and member history work
+- [ ] Dashboard metrics come from real queries (not placeholders)
+- [ ] Reports filter by date and totals match payment rows
+- [ ] Lint, typecheck, and tests pass
+
+Update BUILD_STATUS.md, then stop and wait for me.

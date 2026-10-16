@@ -1,0 +1,30 @@
+---
+description: Phase 6 — Payment RPC, history, receipts, reversals, idempotency tests
+globs:
+alwaysApply: false
+---
+
+# Phase 06 — Payments
+
+## Goal
+
+Record payments via a single transactional Postgres RPC with validation, audit, receipts, and reversals (append-only).
+
+## Tasks
+
+- One Postgres RPC in a single transaction: insert payment, validate against outstanding balance, write audit log.
+- Full and partial payments; methods: cash, UPI, card, bank transfer.
+- Idempotency key; derived balance; history and search; receipt screen.
+- Reversal flow with confirmation (reversal rows, never deletes).
+- Tests: full, partial, overpayment rejected, duplicate submit, reversal, receipt accuracy.
+
+## Done when
+
+- [ ] Payment RPC is transactional and validates balance
+- [ ] Full/partial and all methods work; overpayment rejected
+- [ ] Idempotency prevents duplicate submits
+- [ ] History, search, receipt, and reversal-with-confirm work
+- [ ] All listed payment tests pass
+- [ ] Lint, typecheck, and tests pass
+
+Update BUILD_STATUS.md, then stop and wait for me.

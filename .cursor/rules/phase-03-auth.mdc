@@ -1,0 +1,31 @@
+---
+description: Phase 3 — Login, logout, session persistence, protected routes, gym role load
+globs:
+alwaysApply: false
+---
+
+# Phase 03 — Auth
+
+## Goal
+
+Implement Supabase auth flows with secure session persistence, protected routes, and post-login gym/role loading.
+
+## Tasks
+
+- Login, logout, forgot password.
+- Session persistence with SecureStore.
+- Protected routes (auth-gated groups).
+- Friendly, actionable error messages.
+- Load gym and role after login (from verified server data, not client `gym_id`).
+- Auth-related tests.
+
+## Done when
+
+- [ ] Login / logout / forgot password work
+- [ ] Session persists via SecureStore
+- [ ] Unauthenticated users cannot reach protected screens
+- [ ] Gym and role load correctly after login
+- [ ] Friendly errors shown for common failures
+- [ ] Tests pass (lint, typecheck, tests)
+
+Update BUILD_STATUS.md, then stop and wait for me.

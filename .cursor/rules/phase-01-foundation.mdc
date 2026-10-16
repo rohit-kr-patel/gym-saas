@@ -1,0 +1,31 @@
+---
+description: Phase 1 — Expo foundation, tooling, auth shell, BUILD_STATUS and SETUP
+globs:
+alwaysApply: false
+---
+
+# Phase 01 — Foundation
+
+## Goal
+
+Bootstrap a runnable Expo + TypeScript strict app with Expo Router, auth-gated route groups, bottom-tab shell, tooling, and project docs.
+
+## Tasks
+
+- Initialize Expo (Expo Router) with TypeScript strict.
+- Auth-gated route groups (e.g. signed-in vs signed-out).
+- Bottom-tab shell with placeholder screens: Dashboard, Members, Attendance, Payments, Settings.
+- ESLint, Prettier, Jest + React Native Testing Library.
+- Env config (`.env` / `.env.example`); no secrets in Git.
+- Supabase CLI wired for local/dev workflow.
+- Create/update `BUILD_STATUS.md` and `SETUP.md`.
+
+## Done when
+
+- [ ] Lint passes
+- [ ] Typecheck passes
+- [ ] Tests pass
+- [ ] App starts successfully
+- [ ] `BUILD_STATUS.md` and `SETUP.md` exist and reflect Phase 1
+
+Update BUILD_STATUS.md, then stop and wait for me.

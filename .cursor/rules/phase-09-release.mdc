@@ -1,0 +1,30 @@
+---
+description: Phase 9 — Production config, EAS APK, backup docs, handover
+globs:
+alwaysApply: false
+---
+
+# Phase 09 — Release
+
+## Goal
+
+Production-ready Supabase setup, APK handover via EAS Build, docs, and an honest unverified-items list.
+
+## Tasks
+
+- Production Supabase config; run migrations; provision owner.
+- Backup and restore documentation.
+- EAS Build (APK for handover); confirm no secrets bundled.
+- Final `SETUP.md` and handover guide.
+- List anything unverified in `BUILD_STATUS.md`.
+
+## Done when
+
+- [ ] Production config and migrations applied; owner provisioned
+- [ ] Backup/restore docs written
+- [ ] EAS APK builds successfully; no secrets in the bundle
+- [ ] `SETUP.md` and handover guide complete
+- [ ] Unverified items listed in `BUILD_STATUS.md`
+- [ ] Lint, typecheck, and tests pass (or failures documented as unverified)
+
+Update BUILD_STATUS.md, then stop and wait for me.
