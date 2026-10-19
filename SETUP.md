@@ -29,15 +29,39 @@ npm start         # start Metro, choose a target
 
 Without env vars the app still starts and shows a "not configured" notice on the sign-in screen.
 
-## Local Supabase (optional in Phase 1)
+## Local Supabase
 
 ```bash
 npm run supabase:start    # needs Docker; prints the local URL and anon key
-npm run supabase:status
+npm run db:reset          # applies supabase/migrations + supabase/seed.sql
+npm run db:test           # pgTAP suites in supabase/tests/database (supabase test db)
 npm run supabase:stop
 ```
 
-Schema and RLS migrations arrive in Phase 2 (`supabase/migrations`).
+No Docker? Run the same migrations, seed and pgTAP suites on a plain local PostgreSQL
+with pgTAP installed (uses a small stub of Supabase's `auth` schema and roles):
+
+```bash
+# needs PG* env vars for a superuser connection; creates/drops database gym_saas_test
+npm run db:test:local
+```
+
+### Seed data (local only)
+
+`supabase/seed.sql` creates two demo gyms. Demo logins (throwaway password in the seed file,
+never use outside local dev): `owner.a@demo.gym.test`, `staff.a@demo.gym.test`, `owner.b@demo.gym.test`.
+
+### Provisioning a real gym (one time)
+
+Gyms and owner roles can only be created by the service-role-only `provision_gym` function.
+Run from your machine; the service-role key comes from the shell, never from `.env` or Git:
+
+```bash
+SUPABASE_URL=https://<project>.supabase.co SUPABASE_SERVICE_ROLE_KEY=<service-role-key> \
+  npm run db:provision -- --name "My Gym" --email owner@example.com [--timezone Asia/Kolkata] [--full-name "Owner Name"]
+```
+
+If the owner has no auth user yet, one is created and a temporary password is printed once.
 
 ## Checks
 
@@ -55,4 +79,6 @@ npm run format    # Prettier
 - `app/(app)/(tabs)` — signed-in tab shell
 - `components/`, `constants/theme.ts`, `lib/`, `providers/`
 - `__tests__/` — Jest + React Native Testing Library
+- `supabase/migrations`, `supabase/seed.sql`, `supabase/tests/database` — schema, RLS, seed, pgTAP
+- `scripts/provision-gym.js` — one-time gym provisioning
 - `.cursor/rules/` — project and phase rules

@@ -52,7 +52,11 @@
     "verify": "npm run lint && npm run typecheck && npm test",
     "supabase:start": "supabase start",
     "supabase:stop": "supabase stop",
-    "supabase:status": "supabase status"
+    "supabase:status": "supabase status",
+    "db:reset": "supabase db reset",
+    "db:test": "supabase test db",
+    "db:test:local": "bash supabase/scripts/local-pg-test.sh",
+    "db:provision": "node scripts/provision-gym.js"
   },
   "private": true
 }
